@@ -27,6 +27,7 @@
       border: 3px solid hsl(261, 80%, 56%);
       border-radius: 1rem;
       margin: 0 auto;
+      margin-top: 3.5rem;
       overflow: hidden;
     }
 
@@ -41,9 +42,25 @@
       transition: width 200ms;
     }
 
+    .generate-pass {
+      height: 3rem;
+      margin-top: 3.5rem;
+      width: 40%;
+      font-size: large;
+      padding: .15rem .55rem;
+      background-color: hsl(261, 80%, 56%);
+
+      color: hsl(266, 64%, 89%);
+      border: 1px solid hsl(261, 80%, 56%);
+
+      outline: none;
+      text-align: center;
+      border-radius: .3rem;
+    }
+
     .password-input {
       height: 3rem;
-      margin-top: 1rem;
+      margin-top: 3.5rem;
       width: 40%;
       font-size: large;
       padding: .15rem .55rem;
@@ -61,10 +78,15 @@
       border-color: hsl(261, 88%, 70%);
     }
 
+    .reasons {
+      margin-top: 3.5rem;
+    }
+
     .reasons > * {
       margin-top: .5rem;
       color: hsl(261, 80%, 56%);
     }
+
     ::placeholder {
       color: hsl(266, 64%, 89%);
       opacity: 1;
@@ -76,6 +98,7 @@
   <div class="strength-meter" id="strength-meter"></div>
   <input class="password-input" id="password-input" placeholder="Enter your password here" type="text" autofocus aria-laballedby="password">
   <div id="reasons" class="reasons"></div>
+  <button class="generate-pass" type="button" id="generate-password">Generate Password</button>
   <script src="script.js" defer></script>
 </body>
 </html>

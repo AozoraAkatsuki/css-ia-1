@@ -1,9 +1,11 @@
 const strengthMeter = document.getElementById('strength-meter')
 const passwordInput = document.getElementById('password-input')
 const reasonsContainer = document.getElementById('reasons')
+const generateButton = document.getElementById('generate-password')
 
 passwordInput.addEventListener('input', updateStrengthMeter)
 updateStrengthMeter()
+generateButton.addEventListener('click', generatePassword)
 
 function updateStrengthMeter() {
   const weaknesses = calculatePasswordStrength(passwordInput.value)
@@ -96,10 +98,33 @@ function repeatCharactersWeakness(password) {
   }
 }
 
-let wordString = loadFile("PassphraseWordlist.txt");
-let words = wordString.split(",");
+function generatePassword() {
+  let wordString = loadFile("PassphraseWordlist.txt");
+  let words = wordString.split(",");
+  let separators = [".", "!", "@", "#", "$", "%", "^", "&", "*", "\\", "|", "/", "?"];
+  let password = "";
+  let randSep = separators[Math.floor(Math.random() * separators.length)];
 
+  // select 4 random words
+  for (let i = 0; i < 4; i++) {
+    let randInd = Math.floor(Math.random() * words.length);
+    // console.log(randInd);
 
+    let element = words[randInd];
+
+    // concat with random separators
+    if (i == 3) {
+      password += element;
+    } else {
+      password += element + randSep;
+    }
+  }
+
+  // console.log(password);
+  passwordInput.value = password;
+
+  updateStrengthMeter();
+}
 
 function loadFile(filePath) {
   var result = null;
