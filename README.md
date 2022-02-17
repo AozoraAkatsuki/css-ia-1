@@ -28,7 +28,7 @@ http://localhost:4000
 
 ## Examples
 
-Inital Page
+Initial Page
 ![WhatsApp Image 2022-02-17 at 22 43 21](https://user-images.githubusercontent.com/60062557/154538160-433da2e3-c58a-4278-b9f1-07aef5673cc6.jpeg)
 
 Password Strength Test on User Password
